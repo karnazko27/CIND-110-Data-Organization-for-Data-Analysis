@@ -1,0 +1,229 @@
+<flowers>
+  <flower>
+    <name>Rose</name>
+    <origins>
+    <origin>Asia</origin>
+</origins>
+
+<colors>
+    <color>Red</color>	
+</colors>
+
+
+    <description>The rose is known for its showy flowers and sharp thorns. It symbolizes love and passion.</description>
+	<varieties>
+      <variety>Hybrid Tea Rose</variety>
+      <variety>Floribunda Rose</variety>
+      <variety>Grandiflora Rose</variety>
+      <variety>Climbing Rose</variety>
+      <variety>Miniature Rose</variety>
+    </varieties>
+  </flower>
+
+
+  <flower>
+    <name>Tulip</name>
+        <origins>
+    <origin>Asia Minor</origin>
+	</origins>
+	
+	<colors>
+	    <color>Various</color>
+</colors>
+	
+
+    <description>Tulips are known for their bright colors and distinctive shape. They are a popular choice for gardens and bouquets.</description>
+    <varieties>
+      <variety>Single Early Tulip</variety>
+      <variety>Double Early Tulip</variety>
+      <variety>Triumph Tulip</variety>
+      <variety>Parrot Tulip</variety>
+    </varieties>
+  </flower>
+  
+  
+<flower>
+    <name>Lily</name>
+<origins>
+    <origin>Asia</origin>
+    <origin>Europe</origin>
+    <origin>North America</origin>
+    <origin>Australia</origin>
+</origins>
+<colors>
+	<color>White</color>
+	<color>Yellow</color>
+	<color>Pink</color>
+	<color>Red</color>
+	<color>Orange</color>
+</colors>
+
+    <description>Lilies are elegant and fragrant flowers with large, trumpet-shaped blossoms. They are often associated with funerals, where they symbolize the restored innocence of the soul of the deceased.</description>
+    <varieties>
+      <variety>Asiatic Lily</variety>
+      <variety>Oriental Lily</variety>
+      <variety>Trumpet Lily</variety>
+      <variety>Martagon Lily</variety>
+      <variety>Turk's Cap Lily</variety>
+    </varieties>
+  </flower>
+  
+  
+<flower>
+    <name>Sunflower</name>
+        <origins>
+    <origin>North America</origin>
+</origins>
+
+
+<colors>
+	    <color>Yellow</color>
+</colors>
+
+
+    <description>Sunflowers are known for their large, bright blooms and their ability to track the sun across the sky. They symbolize adoration, loyalty and longevity.</description>
+    <varieties>
+      <variety>Common Sunflower</variety>
+      <variety>Maximilian Sunflower</variety>
+      <variety>Italian White Sunflower</variety>
+      <variety>Russian Mammoth Sunflower</variety>
+    </varieties>
+  </flower>
+  
+  
+  <flower>
+    <name>Orchid</name>
+    <origins>
+    <origin>Worldwide Tropical Regions</origin>
+</origins>
+
+
+<colors>
+	    <color>Various</color>
+</colors>
+
+
+
+    <description>Orchids are known for their exotic and unique structure. They represent love, luxury, beauty and strength.</description>
+    <varieties>
+      <variety>Phalaenopsis Orchid</variety>
+      <variety>Dendrobium Orchid</variety>
+      <variety>Cattleya Orchid</variety>
+      <variety>Vanda Orchid</variety>
+    </varieties>
+  </flower>
+  <flower>
+    <name>Daisy</name>
+
+    
+    
+            <origins>
+    <origin>Northern Hemisphere</origin>
+</origins>
+    
+    <colors>
+    <color>White with Yellow Center</color>
+</colors>
+    
+
+    <description>Daisies are simple yet sophisticated and are some of the most beautiful flowers in the floral world. They symbolize innocence and purity.</description>
+    <varieties>
+      <variety>English Daisy</variety>
+      <variety>Gerber Daisy</variety>
+      <variety>Oxeye Daisy</variety>
+      <variety>Painted Daisy</variety>
+    </varieties>
+  </flower>
+  
+  
+  <flower>
+    <name>Peony</name>
+<origins>
+    <origin>Asia</origin>
+    <origin>Europe</origin>
+    <origin>Western North America</origin>
+</origins>
+    <colors>
+	<color>Pink</color>
+	<color>Red</color>
+	<color>White</color>
+	<color>Yellow</color>
+</colors>
+    <description>Peonies are known for their large, fluffy blooms. They symbolize romance, prosperity, good fortune, a happy marriage, riches, honor, and compassion.</description>
+    <varieties>
+      <variety>Herbaceous Peony</variety>
+      <variety>Tree Peony</variety>
+      <variety>Intersectional Peony</variety>
+    </varieties>
+  </flower>
+  <flower>
+    <name>Lavender</name>
+    
+                <origins>
+    <origin>Mediterranean</origin>
+</origins>
+    
+    <colors>
+    <color>Purple</color>
+</colors>
+
+    
+    
+
+
+    <description>Lavender is a herb known for its sweet floral aroma. It's often used in perfumes, soaps, and sachets for scenting clothes. It symbolizes purity, silence, and luck.</description>
+    <varieties>
+      <variety>English Lavender</variety>
+      <variety>French Lavender</variety>
+      <variety>Spanish Lavender</variety>
+      <variety>Portuguese Lavender</variety>
+    </varieties>
+  </flower>
+  
+  
+  <flower>
+    <name>Marigold</name>
+    <origins>
+    <origin>New World</origin>
+</origins>
+
+
+    <colors>
+	<color>White</color>
+	<color>Yellow</color>
+	<color>Orange</color>
+	<color>Red</color>
+</colors>
+    <description>Marigolds are known for their vibrant colors. They are often planted in gardens to repel pests, and are used in celebrations and ceremonies in many cultures.</description>
+    <varieties>
+      <variety>African Marigold</variety>
+      <variety>French Marigold</variety>
+      <variety>Signet Marigold</variety>
+      <variety>Mexican Marigold</variety>
+    </varieties>
+  </flower>
+  
+  
+  <flower>
+    <name>Dahlia</name>
+    <origins>
+    <origin>Mexico</origin>
+</origins>
+
+
+<colors>
+	    <color>Various</color>
+</colors>
+
+
+    <description>Dahlias are known for their unique spiky petals. They come in a variety of sizes and colors, and symbolize elegance, inner strength, creativity, change, and dignity.</description>
+    <varieties>
+      <variety>Single Flowered Dahlia</variety>
+      <variety>Anemone Flowered Dahlia</variety>
+      <variety>Collerette Dahlia</variety>
+      <variety>Decorative Dahlia</variety>
+      <variety>Ball Dahlia</variety>
+      <variety>Pompon Dahlia</variety>
+    </varieties>
+  </flower>
+</flowers>

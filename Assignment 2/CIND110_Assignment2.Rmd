@@ -1,0 +1,149 @@
+---
+title: "CIND110_Assignment2"
+output: html_document
+date: "2023-08-12"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Assignment 2
+
+Install packages
+
+```{r}
+# Comment this before knitting
+# install.packages("tm", dependencies = T)
+# install.packages("RWeka", dependencies = T)
+# install.packages("textstem", dependencies = T)
+# install.packages("textclean", dependencies = T)
+# install.packages("text2vec", dependencies = T)
+```
+
+## Question 2
+
+Read the relational dataset, and apply three different text pre-processing techniques to cleanse the description attribute.
+
+```{r}
+# Loading packages to current workspace
+lstPackages <- c('tm', 'RWeka', 'textstem', 'textclean', 'text2vec')
+lapply(lstPackages, library, character.only = TRUE)
+```
+
+
+```{r}
+# Load dataset
+rawData <- read.csv(file = "Flowers_CSV_Data.csv", header = T, sep = ",")
+
+# Read the dataset
+numberOfDocs <- length(rawData$id)
+rawData$id <- paste0("Doc", c(1:numberOfDocs))
+rawData
+```
+
+
+```{r}
+# Prepare the corpora
+listOfDocs <- tm::VectorSource(rawData$description)
+listOfDocs$Names <- names(rawData$id)
+corporaData <- tm::VCorpus(listOfDocs)
+
+```
+
+Preprocessing technique 1: Stopword removal
+
+```{r}
+corporaData <- tm::tm_map(corporaData, removeWords, stopwords('english'))
+corporaData <- tm::tm_map(corporaData, removeWords, stopwords('SMART'))
+corporaData
+```
+
+Preprocessing technique 2: Stemming
+
+```{r}
+corporaData <- tm::tm_map(corporaData, stemDocument)
+corporaData
+```
+
+Preprocessing technique 3: Removing punctuation marks
+
+```{r}
+corporaData <- tm::tm_map(corporaData, content_transformer(tolower))
+corporaData <- tm::tm_map(corporaData, removePunctuation, ucp = T, 
+                           preserve_intra_word_contractions = F,
+                           preserve_intra_word_dashes = F)
+corporaData
+```
+
+## Question 3 Create a unigram TermDocumentMatrix (TDM) and then represent it in a matrix format and display its dimension.
+
+```{r}
+# Create a uni-gram Term Document Matrix
+term.doc.matrix.lg <- tm::TermDocumentMatrix(corporaData)
+tm::inspect(term.doc.matrix.lg[1:10, 1:10])
+
+# Represent TDM in a matrix format and display its dimensions
+term.doc.matrix.unigram <- as.matrix(term.doc.matrix.lg)
+dim(term.doc.matrix.unigram)
+head(term.doc.matrix.unigram)
+```
+
+
+## Question 4 Using the vectors obtained in the previous question, apply the cosine similarity function and identify which flower is most similar to 'Rose'.
+
+```{r}
+# Reduce dimensions of TDM uni-gram matrix
+term.doc.matrix.lg <- tm::removeSparseTerms(term.doc.matrix.lg, 0.8)
+tm::inspect(term.doc.matrix.lg[1:10, 1:10])
+
+# Represent the TDM as a regular matrix
+term.doc.matrix.unigram <- as.matrix(term.doc.matrix.lg)
+dim(term.doc.matrix.unigram)
+head(term.doc.matrix.unigram)
+```
+```{r}
+# Declaring weights (TF-IDF variants)
+tf.idf.weights <- function(tf.vec){
+  # Computes tfidf weights from term frequency vector
+  n.docs <- length(tf.vec)
+  doc.frequency <- length(tf.vec[tf.vec > 0])
+  weights <- rep(0, length(tf.vec))
+  relative.frequency <- tf.vec[tf.vec > 0] / sum(tf.vec[tf.vec > 0])
+  weights[tf.vec > 0] <- relative.frequency * log10(n.docs/doc.frequency)
+  return(weights)
+}
+```
+
+
+```{r}
+# Compute the TF-IDF (unigram)
+tfidf.matrix.uni <- t(apply(as.matrix(term.doc.matrix.unigram), 1,
+                            FUN = function(row) {tf.idf.weights(row)}))
+colnames(tfidf.matrix.uni) <- rawData$id
+head(tfidf.matrix.uni)
+dim(tfidf.matrix.uni)
+```
+
+Doc0 is Rose so let's see which flower is most similar to Rose.
+
+```{r}
+# Compute Cosine similarity indices for the uni-gram TDM
+c.similarity.matrix.uni <- text2vec::sim2(t(tfidf.matrix.uni), method='cosine')
+
+# display ranked lists
+sort(c.similarity.matrix.uni["Doc0",], decreasing = T)
+```
+
+```{r}
+c.similarity.matrix.uni["Doc0",]
+```
+
+The Flower Rose is most similar to the 4th and 9th flower, Sunflower and Marigold.
+
+
+
+
+
+
+
